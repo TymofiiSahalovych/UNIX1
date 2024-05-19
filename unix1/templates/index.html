@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+</head>
+<body>
+
+<h2>Product Management</h2>
+
+<form action="/" method="post">
+    <!-- Input fields -->
+    <div>
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" name="itemName" required>
+    </div>
+    <div>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+    </div>
+    
+    <!-- Submit button -->
+    <button type="submit">Add Product</button>
+</form>
+
+<!-- Table to display products -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.itemID }}</td>
+            <td>{{ product.itemName }}</td>
+            <td>{{ product.amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
